@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from '../components/Layout';
 
@@ -12,14 +13,13 @@ import Cadastro from '../pages/Cadastro';
 
 const isAuthenticated = () => !!localStorage.getItem('token');
 
-const PrivateRoute = ({ children }: { children: JSX.Element }) => {
+const PrivateRoute = ({ children }: { children: React.ReactElement }) => {
   return isAuthenticated() ? (
     <Layout>{children}</Layout>
   ) : (
     <Navigate to="/login" replace />
   );
 };
-
 const AppRoutes = () => {
   return (
     <BrowserRouter>
