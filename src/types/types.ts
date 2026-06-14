@@ -38,6 +38,7 @@ export interface ContaPagar {
   id: number;
   descricao: string;
   valor: number;
+  valor_pago?: number;   
   data_lancamento?: string;
   data_vencimento?: string;
   data_pagamento?: string;
